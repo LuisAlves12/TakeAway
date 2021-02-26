@@ -39,6 +39,13 @@ include "css.php";
 	    </table>
     </body>
 </html>
-<?php
-    }
-?>
+    <a href="login.php" style="color:white">Login</a>
+    <a href="register.php" style="color:white">Register</a>  
+        <?php
+            if($_SESSION['login']== "correto"){
+        ?>
+            <a href="processa_logout.php" style="color:white">Logout</a>
+        <?php
+            }
+        }
+    ?>
