@@ -18,7 +18,7 @@ include "css.php";
     <nav class="navbar navbar-expand-lg navbar bg-dark">
     <div class="navbar-nav">
         <a class="nav-item nav-link" href="index.php" style="color:white">Pagina Inicial</a>
-        <a class="nav-item nav-link" href="restaurante_index.php" style="color:white">Restaurante</a>
+        <a class="nav-item nav-link" href="produto_index.php" style="color:white">Produto</a>
         <a class="nav-item nav-link" href="" style="color:white"></a>
         <a class="nav-item nav-link" href="login.php" style="color:white">Login</a>
         <a class="nav-item nav-link" href="register.php" style="color:white">Register</a>  
@@ -38,14 +38,14 @@ include "css.php";
     </div>
 </nav>
 <br>
-        <h1 style="text-align:center;">Take Away</h1>
+        <h1 style="text-align:center;">Produto</h1>
     <?php
-        $stm = $con->prepare('select * from takeaway');
+        $stm = $con->prepare('select * from produto');
         $stm->execute();
         $res=$stm->get_result();
         while($resultado = $res->fetch_assoc()){
-            echo '<a href="restaurante_show.php?restaurante='.$resultado['id_restaurante'].'" style="color:white">';
-            echo $resultado['restaurante'];
+            echo '<a href="produto_show.php?produto='.$resultado['id_produto'].'" style="color:white">';
+            echo $resultado['produto'];
             echo '</a>';
             echo '<br>';
         }
@@ -53,7 +53,7 @@ include "css.php";
         
         ?>
         <br>
-         <a href="restaurante_create.php" style="color:white">Adicionar Restaurante</a>
+         <a href="produto_create.php" style="color:white">Adicionar Produto</a>
     </body>
     
 </html>

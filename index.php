@@ -15,6 +15,25 @@ include "css.php";
         <title>Take Away</title>
     </head>
     <body style="color:white;background-color:black">
+    <nav class="navbar navbar-expand-lg navbar bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" href="login.php" style="text-align: right;color:white">Login</a>
+        <a class="nav-item nav-link" href="register.php" style="text-align: right;color:white">Register</a>  
+        <?php
+            if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
+        ?>
+            <a class="nav-item nav-link" href="processa_logout.php" style="text-align: right;color:white">Logout</a>
+        <?php
+            }
+            else{
+                echo '';
+            }
+        }
+    ?>
+    </div>
+    </li>
+    </div>
+</nav>
     <br> 
         <h1 style="text-align:center;">Take Away</h1>
         <br><br>
@@ -29,23 +48,11 @@ include "css.php";
         <br><br><br><br>
         <table>
 		    <tr>
-                <td style="color:black">------------------------------------------</td>
+                <td style="color:black">-----------------------------------------------------</td>
                 <td><button style='width: 200px'><a href="restaurante_index.php" style="color:black">Restaurante</a></button></td>
-                <td style="color:black">-----------------------</td>
-                <td><button style='width: 200px'><a href=".php" style="color:black">Restaurante</a></button></td>
-                <td style="color:black">-----------------------</td>
-                <td><button style='width: 200px'><a href=".php" style="color:black">Restaurante</a></button></td>
+                <td style="color:black">-----------------------------------------</td>
+                <td><button style='width: 200px'><a href="produto_index.php" style="color:black">Produto</a></button></td>
 		    </tr>
 	    </table>
     </body>
 </html>
-    <a href="login.php" style="color:white">Login</a>
-    <a href="register.php" style="color:white">Register</a>  
-        <?php
-            if($_SESSION['login']== "correto"){
-        ?>
-            <a href="processa_logout.php" style="color:white">Logout</a>
-        <?php
-            }
-        }
-    ?>
