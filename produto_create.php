@@ -44,6 +44,7 @@ if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
         
                 else{
                     $sql = 'insert into produto(produto,preco,imagem) values(?,?,?)';
+                    
                     $stm = $con->prepare($sql);
                     if($stm!=false){
                         $stm->bind_param('sss',$produto,$preco,$imagem);
@@ -73,6 +74,7 @@ if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
     <h1 style="text-align:center;">Adicionar Produto</h1>
     <form action="produto_create.php" method="post" enctype="multipart/form-data">
     <label>Produto</label><input type="text" name="produto" required><br>
+    <label>Restaurante</label><input type="text" name="id_restaurante" required><br>
     <label>Preço</label><input type="text" name="preco"><br>
     <label>Imagem</label><input type="file" name="imagem" maxlength="50" value="<?php echo $produto['imagem'];?>"><br>
     <input type="submit" name="enviar"><br>
